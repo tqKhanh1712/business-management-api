@@ -1,74 +1,145 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" width="100%" height="100%" style="background:#ffffff; font-family: Segoe UI, Arial, sans-serif;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 740" width="1020" height="740" style="background:#ffffff; font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;">
   <defs>
-    <linearGradient id="gradHeader" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#1e3a8a" />
-      <stop offset="100%" stop-color="#3b82f6" />
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="50%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
     </linearGradient>
-    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
-      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    <filter id="cardShadow" x="-2%" y="-4%" width="104%" height="112%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.08"/>
     </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#64748b"/>
+    </marker>
   </defs>
 
-  <!-- Title -->
-  <rect x="20" y="20" width="860" height="60" rx="8" fill="url(#gradHeader)" filter="url(#shadow)"/>
-  <text x="450" y="58" text-anchor="middle" fill="#ffffff" font-size="22" font-weight="bold">KIẾN TRÚC HỆ THỐNG QTKD - TUẦN 05</text>
+  <!-- Title Banner -->
+  <rect x="30" y="20" width="960" height="65" rx="8" fill="url(#headerGrad)" filter="url(#cardShadow)"/>
+  <text x="510" y="48" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="700" letter-spacing="0.5">KIẾN TRÚC HỆ THỐNG QTKD - PHASE 2 (TUẦN 05)</text>
+  <text x="510" y="68" text-anchor="middle" fill="#e0e7ff" font-size="13">Mô hình phân tầng ASP.NET Core Web API · Entity Framework Core · PostgreSQL</text>
 
-  <!-- Layer 1: Client -->
-  <rect x="50" y="110" width="800" height="70" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2" filter="url(#shadow)"/>
-  <text x="70" y="140" fill="#0f172a" font-size="16" font-weight="bold">Client Layer</text>
-  <rect x="280" y="125" width="220" height="40" rx="5" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
-  <text x="390" y="150" text-anchor="middle" fill="#0369a1" font-size="14" font-weight="600">Swagger UI (/swagger)</text>
-  <rect x="530" y="125" width="180" height="40" rx="5" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
-  <text x="620" y="150" text-anchor="middle" fill="#b45309" font-size="14" font-weight="600">Postman / Browser</text>
+  <!-- ==================== LAYER 1: CLIENT ==================== -->
+  <g transform="translate(0, 100)">
+    <rect x="30" y="0" width="960" height="75" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" filter="url(#cardShadow)"/>
+    <!-- Layer Tag -->
+    <rect x="45" y="12" width="120" height="26" rx="4" fill="#0284c7"/>
+    <text x="105" y="29" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="700">CLIENT LAYER</text>
 
-  <!-- Arrow -->
-  <line x1="450" y1="180" x2="450" y2="210" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
-  <text x="460" y="200" fill="#64748b" font-size="12">HTTP GET</text>
+    <!-- Components -->
+    <rect x="230" y="14" width="280" height="46" rx="6" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.2"/>
+    <text x="370" y="36" text-anchor="middle" fill="#0369a1" font-size="14" font-weight="600">Swagger UI</text>
+    <text x="370" y="51" text-anchor="middle" fill="#0284c7" font-size="11">https://localhost:&lt;port&gt;/swagger</text>
 
-  <!-- Layer 2: API (Controllers) -->
-  <rect x="50" y="210" width="800" height="85" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2" filter="url(#shadow)"/>
-  <text x="70" y="240" fill="#0f172a" font-size="16" font-weight="bold">API Layer</text>
-  <rect x="200" y="230" width="260" height="50" rx="5" fill="#ecfdf5" stroke="#059669" stroke-width="1.5"/>
-  <text x="330" y="255" text-anchor="middle" fill="#065f46" font-size="14" font-weight="600">CustomersController</text>
-  <text x="330" y="272" text-anchor="middle" fill="#047857" font-size="12">GET /api/customers</text>
-  <rect x="490" y="230" width="260" height="50" rx="5" fill="#ecfdf5" stroke="#059669" stroke-width="1.5"/>
-  <text x="620" y="255" text-anchor="middle" fill="#065f46" font-size="14" font-weight="600">ContractsController</text>
-  <text x="620" y="272" text-anchor="middle" fill="#047857" font-size="12">GET /api/contracts/{id}</text>
+    <rect x="550" y="14" width="280" height="46" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.2"/>
+    <text x="690" y="36" text-anchor="middle" fill="#b45309" font-size="14" font-weight="600">Postman / Browser</text>
+    <text x="690" y="51" text-anchor="middle" fill="#d97706" font-size="11">HTTP Client Test Tool</text>
+  </g>
 
-  <!-- Arrow -->
-  <line x1="450" y1="295" x2="450" y2="325" stroke="#64748b" stroke-width="2"/>
-  <text x="460" y="315" fill="#64748b" font-size="12">Service Call</text>
+  <!-- Connector 1 -->
+  <line x1="510" y1="175" x2="510" y2="202" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="430" y="180" width="160" height="18" rx="3" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="510" y="193" text-anchor="middle" fill="#475569" font-size="11" font-weight="600">HTTP GET Request</text>
 
-  <!-- Layer 3: Services Layer -->
-  <rect x="50" y="325" width="800" height="80" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2" filter="url(#shadow)"/>
-  <text x="70" y="355" fill="#0f172a" font-size="16" font-weight="bold">Service Layer</text>
-  <rect x="200" y="345" width="260" height="45" rx="5" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
-  <text x="330" y="372" text-anchor="middle" fill="#1e40af" font-size="14" font-weight="600">ICustomerService / CustomerService</text>
-  <rect x="490" y="345" width="260" height="45" rx="5" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
-  <text x="620" y="372" text-anchor="middle" fill="#1e40af" font-size="14" font-weight="600">IContractService / ContractService</text>
+  <!-- ==================== LAYER 2: API (CONTROLLERS) ==================== -->
+  <g transform="translate(0, 205)">
+    <rect x="30" y="0" width="960" height="88" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" filter="url(#cardShadow)"/>
+    <!-- Layer Tag -->
+    <rect x="45" y="12" width="120" height="26" rx="4" fill="#059669"/>
+    <text x="105" y="29" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="700">API LAYER</text>
 
-  <!-- Arrow -->
-  <line x1="450" y1="405" x2="450" y2="435" stroke="#64748b" stroke-width="2"/>
-  <text x="460" y="425" fill="#64748b" font-size="12">EF Core / LINQ</text>
+    <!-- Components -->
+    <rect x="230" y="14" width="280" height="58" rx="6" fill="#ecfdf5" stroke="#059669" stroke-width="1.2"/>
+    <text x="370" y="37" text-anchor="middle" fill="#065f46" font-size="14" font-weight="700">CustomersController</text>
+    <text x="370" y="56" text-anchor="middle" fill="#047857" font-size="12">GET /api/customers</text>
 
-  <!-- Layer 4: Data Access & Entities -->
-  <rect x="50" y="435" width="800" height="150" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2" filter="url(#shadow)"/>
-  <text x="70" y="465" fill="#0f172a" font-size="16" font-weight="bold">Data Layer &amp; Database</text>
-  
-  <rect x="180" y="455" width="180" height="110" rx="5" fill="#fdf2f8" stroke="#db2777" stroke-width="1.5"/>
-  <text x="270" y="480" text-anchor="middle" fill="#9d174d" font-size="14" font-weight="bold">QtkdDbContext</text>
-  <text x="270" y="505" text-anchor="middle" fill="#475569" font-size="12">Fluent API Mappings</text>
-  <text x="270" y="525" text-anchor="middle" fill="#475569" font-size="12">Seed Data (HasData)</text>
-  <text x="270" y="545" text-anchor="middle" fill="#475569" font-size="12">Migrations History</text>
+    <rect x="550" y="14" width="280" height="58" rx="6" fill="#ecfdf5" stroke="#059669" stroke-width="1.2"/>
+    <text x="690" y="37" text-anchor="middle" fill="#065f46" font-size="14" font-weight="700">ContractsController</text>
+    <text x="690" y="56" text-anchor="middle" fill="#047857" font-size="12">GET /api/contracts/{id}</text>
+  </g>
 
-  <rect x="390" y="455" width="220" height="110" rx="5" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5"/>
-  <text x="500" y="480" text-anchor="middle" fill="#b45309" font-size="14" font-weight="bold">Domain Entities</text>
-  <text x="500" y="503" text-anchor="middle" fill="#334155" font-size="12">Customer (1) ──── (N) Contract</text>
-  <text x="500" y="525" text-anchor="middle" fill="#334155" font-size="12">PriceList (1) ──── (N) PriceItem</text>
-  <text x="500" y="547" text-anchor="middle" fill="#64748b" font-size="11">Enums: CustomerStatus, ContractStatus</text>
+  <!-- Connector 2 -->
+  <line x1="510" y1="293" x2="510" y2="320" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="420" y="298" width="180" height="18" rx="3" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="510" y="311" text-anchor="middle" fill="#475569" font-size="11" font-weight="600">Dependency Injection / DTO</text>
 
-  <rect x="640" y="455" width="180" height="110" rx="5" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
-  <text x="730" y="485" text-anchor="middle" fill="#5b21b6" font-size="14" font-weight="bold">PostgreSQL Database</text>
-  <text x="730" y="510" text-anchor="middle" fill="#6b21a8" font-size="13">qtkd_dev</text>
-  <text x="730" y="535" text-anchor="middle" fill="#475569" font-size="12">Npgsql Provider</text>
+  <!-- ==================== LAYER 3: SERVICE LAYER ==================== -->
+  <g transform="translate(0, 323)">
+    <rect x="30" y="0" width="960" height="88" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" filter="url(#cardShadow)"/>
+    <!-- Layer Tag -->
+    <rect x="45" y="12" width="120" height="26" rx="4" fill="#2563eb"/>
+    <text x="105" y="29" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="700">SERVICE LAYER</text>
+
+    <!-- Components -->
+    <rect x="230" y="14" width="280" height="58" rx="6" fill="#eff6ff" stroke="#2563eb" stroke-width="1.2"/>
+    <text x="370" y="37" text-anchor="middle" fill="#1e40af" font-size="13" font-weight="700">ICustomerService / CustomerService</text>
+    <text x="370" y="55" text-anchor="middle" fill="#3b82f6" font-size="11">Truy vấn &amp; ánh xạ sang CustomerDto</text>
+
+    <rect x="550" y="14" width="280" height="58" rx="6" fill="#eff6ff" stroke="#2563eb" stroke-width="1.2"/>
+    <text x="690" y="37" text-anchor="middle" fill="#1e40af" font-size="13" font-weight="700">IContractService / ContractService</text>
+    <text x="690" y="55" text-anchor="middle" fill="#3b82f6" font-size="11">Truy vấn &amp; ánh xạ sang ContractDto</text>
+  </g>
+
+  <!-- Connector 3 -->
+  <line x1="510" y1="411" x2="510" y2="438" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="425" y="416" width="170" height="18" rx="3" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="510" y="429" text-anchor="middle" fill="#475569" font-size="11" font-weight="600">LINQ / EF Core Queries</text>
+
+  <!-- ==================== LAYER 4: DATA ACCESS & DATABASE ==================== -->
+  <g transform="translate(0, 441)">
+    <rect x="30" y="0" width="960" height="260" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" filter="url(#cardShadow)"/>
+    
+    <!-- Top Header inside Layer 4 to avoid ANY overlap -->
+    <rect x="45" y="12" width="220" height="26" rx="4" fill="#7c3aed"/>
+    <text x="155" y="29" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="700">DATA LAYER &amp; DATABASE</text>
+
+    <!-- Box 1: DbContext -->
+    <rect x="50" y="50" width="260" height="190" rx="6" fill="#fdf2f8" stroke="#db2777" stroke-width="1.5"/>
+    <rect x="50" y="50" width="260" height="32" rx="6" fill="#fbcfe8"/>
+    <text x="180" y="71" text-anchor="middle" fill="#9d174d" font-size="14" font-weight="700">QtkdDbContext</text>
+    <text x="70" y="105" fill="#475569" font-size="12" font-weight="600">• Fluent API Configurations</text>
+    <text x="70" y="128" fill="#475569" font-size="12">• Enum as string (HasConversion)</text>
+    <text x="70" y="151" fill="#475569" font-size="12">• Seed Data (HasData):</text>
+    <text x="85" y="172" fill="#64748b" font-size="11">- 2 Customers, 1 Contract Draft</text>
+    <text x="85" y="191" fill="#64748b" font-size="11">- 1 PriceList, 2 PriceItems</text>
+    <text x="70" y="215" fill="#475569" font-size="12">• EF Core Migrations (InitialCreate)</text>
+
+    <!-- Box 2: Domain Entities -->
+    <rect x="330" y="50" width="360" height="190" rx="6" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
+    <rect x="330" y="50" width="360" height="32" rx="6" fill="#fde68a"/>
+    <text x="510" y="71" text-anchor="middle" fill="#92400e" font-size="14" font-weight="700">Domain Entities (Mô hình thực thể)</text>
+    
+    <rect x="345" y="92" width="155" height="55" rx="4" fill="#ffffff" stroke="#fcd34d" stroke-width="1"/>
+    <text x="422" y="112" text-anchor="middle" fill="#0f172a" font-size="12" font-weight="700">Customer</text>
+    <text x="422" y="132" text-anchor="middle" fill="#475569" font-size="10.5">Id, Name, Status</text>
+
+    <text x="510" y="123" text-anchor="middle" fill="#b45309" font-size="14" font-weight="700">1 ──── N</text>
+
+    <rect x="520" y="92" width="155" height="55" rx="4" fill="#ffffff" stroke="#fcd34d" stroke-width="1"/>
+    <text x="597" y="112" text-anchor="middle" fill="#0f172a" font-size="12" font-weight="700">Contract</text>
+    <text x="597" y="132" text-anchor="middle" fill="#475569" font-size="10">Id, ContractNo, Dates, Status</text>
+
+    <rect x="345" y="158" width="155" height="55" rx="4" fill="#ffffff" stroke="#fcd34d" stroke-width="1"/>
+    <text x="422" y="178" text-anchor="middle" fill="#0f172a" font-size="12" font-weight="700">PriceList</text>
+    <text x="422" y="198" text-anchor="middle" fill="#475569" font-size="10.5">Id, Name, EffectiveDate</text>
+
+    <text x="510" y="189" text-anchor="middle" fill="#b45309" font-size="14" font-weight="700">1 ──── N</text>
+
+    <rect x="520" y="158" width="155" height="55" rx="4" fill="#ffffff" stroke="#fcd34d" stroke-width="1"/>
+    <text x="597" y="178" text-anchor="middle" fill="#0f172a" font-size="12" font-weight="700">PriceItem</text>
+    <text x="597" y="198" text-anchor="middle" fill="#475569" font-size="10.5">PriceListId, Code, UnitPrice</text>
+
+    <text x="510" y="231" text-anchor="middle" fill="#64748b" font-size="10.5">Enums: CustomerStatus · ContractStatus</text>
+
+    <!-- Box 3: PostgreSQL Database -->
+    <rect x="710" y="50" width="260" height="190" rx="6" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+    <rect x="710" y="50" width="260" height="32" rx="6" fill="#ddd6fe"/>
+    <text x="840" y="71" text-anchor="middle" fill="#5b21b6" font-size="14" font-weight="700">PostgreSQL Database</text>
+    
+    <text x="730" y="105" fill="#475569" font-size="12" font-weight="600">• Database: qtkd_dev</text>
+    <text x="730" y="128" fill="#475569" font-size="12">• Cổng mặc định: 5432</text>
+    <text x="730" y="151" fill="#475569" font-size="12">• Provider: Npgsql.EFCore</text>
+    <text x="730" y="176" fill="#475569" font-size="12">• Các bảng lưu trữ:</text>
+    <text x="745" y="197" fill="#6b21a8" font-size="11">"Customers", "Contracts"</text>
+    <text x="745" y="215" fill="#6b21a8" font-size="11">"PriceLists", "PriceItems"</text>
+  </g>
 </svg>
