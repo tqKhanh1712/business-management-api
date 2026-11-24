@@ -1,145 +1,181 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 740" width="1020" height="740" style="background:#ffffff; font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 840" width="1060" height="840" style="background:#ffffff; font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;">
   <defs>
     <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#1e3a8a"/>
       <stop offset="50%" stop-color="#2563eb"/>
       <stop offset="100%" stop-color="#3b82f6"/>
     </linearGradient>
-    <filter id="cardShadow" x="-2%" y="-4%" width="104%" height="112%" filterUnits="userSpaceOnUse">
-      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.08"/>
+    <filter id="cardShadow" x="-2%" y="-3%" width="104%" height="108%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.08"/>
     </filter>
-    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <marker id="arrowDown" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto">
       <path d="M 0 1 L 10 5 L 0 9 z" fill="#64748b"/>
+    </marker>
+    <marker id="arrowUp" viewBox="0 0 10 10" refX="4" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1 L 0 5 L 10 9 z" fill="#64748b"/>
     </marker>
   </defs>
 
   <!-- Title Banner -->
-  <rect x="30" y="20" width="960" height="65" rx="8" fill="url(#headerGrad)" filter="url(#cardShadow)"/>
-  <text x="510" y="48" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="700" letter-spacing="0.5">KIẾN TRÚC HỆ THỐNG QTKD - PHASE 2 (TUẦN 05)</text>
-  <text x="510" y="68" text-anchor="middle" fill="#e0e7ff" font-size="13">Mô hình phân tầng ASP.NET Core Web API · Entity Framework Core · PostgreSQL</text>
+  <rect x="30" y="20" width="1000" height="65" rx="8" fill="url(#headerGrad)" filter="url(#cardShadow)"/>
+  <text x="530" y="48" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="700" letter-spacing="0.5">KIẾN TRÚC HỆ THỐNG QTKD - PHASE 2 (TUẦN 05)</text>
+  <text x="530" y="68" text-anchor="middle" fill="#e0e7ff" font-size="13">Mô hình phân tầng ASP.NET Core Web API · Services · Entity Framework Core · PostgreSQL</text>
 
   <!-- ==================== LAYER 1: CLIENT ==================== -->
   <g transform="translate(0, 100)">
-    <rect x="30" y="0" width="960" height="75" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" filter="url(#cardShadow)"/>
-    <!-- Layer Tag -->
+    <rect x="30" y="0" width="1000" height="75" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" filter="url(#cardShadow)"/>
     <rect x="45" y="12" width="120" height="26" rx="4" fill="#0284c7"/>
     <text x="105" y="29" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="700">CLIENT LAYER</text>
 
     <!-- Components -->
-    <rect x="230" y="14" width="280" height="46" rx="6" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.2"/>
-    <text x="370" y="36" text-anchor="middle" fill="#0369a1" font-size="14" font-weight="600">Swagger UI</text>
-    <text x="370" y="51" text-anchor="middle" fill="#0284c7" font-size="11">https://localhost:&lt;port&gt;/swagger</text>
+    <rect x="230" y="14" width="300" height="46" rx="6" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.2"/>
+    <text x="380" y="36" text-anchor="middle" fill="#0369a1" font-size="14" font-weight="600">Swagger UI</text>
+    <text x="380" y="51" text-anchor="middle" fill="#0284c7" font-size="11">https://localhost:&lt;port&gt;/swagger</text>
 
-    <rect x="550" y="14" width="280" height="46" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.2"/>
-    <text x="690" y="36" text-anchor="middle" fill="#b45309" font-size="14" font-weight="600">Postman / Browser</text>
-    <text x="690" y="51" text-anchor="middle" fill="#d97706" font-size="11">HTTP Client Test Tool</text>
+    <rect x="570" y="14" width="300" height="46" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.2"/>
+    <text x="720" y="36" text-anchor="middle" fill="#b45309" font-size="14" font-weight="600">Postman / Browser</text>
+    <text x="720" y="51" text-anchor="middle" fill="#d97706" font-size="11">HTTP Client Test Tool</text>
   </g>
 
-  <!-- Connector 1 -->
-  <line x1="510" y1="175" x2="510" y2="202" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
-  <rect x="430" y="180" width="160" height="18" rx="3" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
-  <text x="510" y="193" text-anchor="middle" fill="#475569" font-size="11" font-weight="600">HTTP GET Request</text>
+  <!-- Connector 1: Client <--> API (Hai chiều) -->
+  <line x1="530" y1="177" x2="530" y2="210" stroke="#64748b" stroke-width="2" marker-start="url(#arrowUp)" marker-end="url(#arrowDown)"/>
+  <rect x="410" y="184" width="240" height="20" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="530" y="198" text-anchor="middle" fill="#334155" font-size="11" font-weight="600">Request (HTTP GET) / Response (JSON)</text>
 
   <!-- ==================== LAYER 2: API (CONTROLLERS) ==================== -->
-  <g transform="translate(0, 205)">
-    <rect x="30" y="0" width="960" height="88" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" filter="url(#cardShadow)"/>
-    <!-- Layer Tag -->
+  <g transform="translate(0, 214)">
+    <rect x="30" y="0" width="1000" height="88" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" filter="url(#cardShadow)"/>
     <rect x="45" y="12" width="120" height="26" rx="4" fill="#059669"/>
     <text x="105" y="29" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="700">API LAYER</text>
 
     <!-- Components -->
-    <rect x="230" y="14" width="280" height="58" rx="6" fill="#ecfdf5" stroke="#059669" stroke-width="1.2"/>
-    <text x="370" y="37" text-anchor="middle" fill="#065f46" font-size="14" font-weight="700">CustomersController</text>
-    <text x="370" y="56" text-anchor="middle" fill="#047857" font-size="12">GET /api/customers</text>
+    <rect x="230" y="14" width="300" height="58" rx="6" fill="#ecfdf5" stroke="#059669" stroke-width="1.2"/>
+    <text x="380" y="37" text-anchor="middle" fill="#065f46" font-size="14" font-weight="700">CustomersController</text>
+    <text x="380" y="56" text-anchor="middle" fill="#047857" font-size="12">GET /api/customers</text>
 
-    <rect x="550" y="14" width="280" height="58" rx="6" fill="#ecfdf5" stroke="#059669" stroke-width="1.2"/>
-    <text x="690" y="37" text-anchor="middle" fill="#065f46" font-size="14" font-weight="700">ContractsController</text>
-    <text x="690" y="56" text-anchor="middle" fill="#047857" font-size="12">GET /api/contracts/{id}</text>
+    <rect x="570" y="14" width="300" height="58" rx="6" fill="#ecfdf5" stroke="#059669" stroke-width="1.2"/>
+    <text x="720" y="37" text-anchor="middle" fill="#065f46" font-size="14" font-weight="700">ContractsController</text>
+    <text x="720" y="56" text-anchor="middle" fill="#047857" font-size="12">GET /api/contracts/{id}</text>
   </g>
 
-  <!-- Connector 2 -->
-  <line x1="510" y1="293" x2="510" y2="320" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
-  <rect x="420" y="298" width="180" height="18" rx="3" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
-  <text x="510" y="311" text-anchor="middle" fill="#475569" font-size="11" font-weight="600">Dependency Injection / DTO</text>
+  <!-- Connector 2: API <--> Services (Hai chiều) -->
+  <line x1="530" y1="304" x2="530" y2="337" stroke="#64748b" stroke-width="2" marker-start="url(#arrowUp)" marker-end="url(#arrowDown)"/>
+  <rect x="420" y="311" width="220" height="20" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="530" y="325" text-anchor="middle" fill="#334155" font-size="11" font-weight="600">Gọi Service (DI) / Trả về DTO</text>
 
   <!-- ==================== LAYER 3: SERVICE LAYER ==================== -->
-  <g transform="translate(0, 323)">
-    <rect x="30" y="0" width="960" height="88" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" filter="url(#cardShadow)"/>
-    <!-- Layer Tag -->
+  <g transform="translate(0, 341)">
+    <rect x="30" y="0" width="1000" height="88" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" filter="url(#cardShadow)"/>
     <rect x="45" y="12" width="120" height="26" rx="4" fill="#2563eb"/>
     <text x="105" y="29" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="700">SERVICE LAYER</text>
 
     <!-- Components -->
-    <rect x="230" y="14" width="280" height="58" rx="6" fill="#eff6ff" stroke="#2563eb" stroke-width="1.2"/>
-    <text x="370" y="37" text-anchor="middle" fill="#1e40af" font-size="13" font-weight="700">ICustomerService / CustomerService</text>
-    <text x="370" y="55" text-anchor="middle" fill="#3b82f6" font-size="11">Truy vấn &amp; ánh xạ sang CustomerDto</text>
+    <rect x="230" y="14" width="300" height="58" rx="6" fill="#eff6ff" stroke="#2563eb" stroke-width="1.2"/>
+    <text x="380" y="37" text-anchor="middle" fill="#1e40af" font-size="13.5" font-weight="700">ICustomerService / CustomerService</text>
+    <text x="380" y="55" text-anchor="middle" fill="#3b82f6" font-size="11">Truy vấn &amp; chuyển đổi sang CustomerDto</text>
 
-    <rect x="550" y="14" width="280" height="58" rx="6" fill="#eff6ff" stroke="#2563eb" stroke-width="1.2"/>
-    <text x="690" y="37" text-anchor="middle" fill="#1e40af" font-size="13" font-weight="700">IContractService / ContractService</text>
-    <text x="690" y="55" text-anchor="middle" fill="#3b82f6" font-size="11">Truy vấn &amp; ánh xạ sang ContractDto</text>
+    <rect x="570" y="14" width="300" height="58" rx="6" fill="#eff6ff" stroke="#2563eb" stroke-width="1.2"/>
+    <text x="720" y="37" text-anchor="middle" fill="#1e40af" font-size="13.5" font-weight="700">IContractService / ContractService</text>
+    <text x="720" y="55" text-anchor="middle" fill="#3b82f6" font-size="11">Truy vấn &amp; chuyển đổi sang ContractDto</text>
   </g>
 
-  <!-- Connector 3 -->
-  <line x1="510" y1="411" x2="510" y2="438" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
-  <rect x="425" y="416" width="170" height="18" rx="3" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
-  <text x="510" y="429" text-anchor="middle" fill="#475569" font-size="11" font-weight="600">LINQ / EF Core Queries</text>
+  <!-- Connector 3: Services <--> Data Access (Hai chiều) -->
+  <line x1="530" y1="431" x2="530" y2="464" stroke="#64748b" stroke-width="2" marker-start="url(#arrowUp)" marker-end="url(#arrowDown)"/>
+  <rect x="415" y="438" width="230" height="20" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="530" y="452" text-anchor="middle" fill="#334155" font-size="11" font-weight="600">Truy vấn LINQ / EF Core trả về Entity</text>
 
   <!-- ==================== LAYER 4: DATA ACCESS & DATABASE ==================== -->
-  <g transform="translate(0, 441)">
-    <rect x="30" y="0" width="960" height="260" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <g transform="translate(0, 468)">
+    <rect x="30" y="0" width="1000" height="345" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" filter="url(#cardShadow)"/>
     
-    <!-- Top Header inside Layer 4 to avoid ANY overlap -->
+    <!-- Top Header Badge -->
     <rect x="45" y="12" width="220" height="26" rx="4" fill="#7c3aed"/>
     <text x="155" y="29" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="700">DATA LAYER &amp; DATABASE</text>
 
-    <!-- Box 1: DbContext -->
-    <rect x="50" y="50" width="260" height="190" rx="6" fill="#fdf2f8" stroke="#db2777" stroke-width="1.5"/>
-    <rect x="50" y="50" width="260" height="32" rx="6" fill="#fbcfe8"/>
-    <text x="180" y="71" text-anchor="middle" fill="#9d174d" font-size="14" font-weight="700">QtkdDbContext</text>
-    <text x="70" y="105" fill="#475569" font-size="12" font-weight="600">• Fluent API Configurations</text>
-    <text x="70" y="128" fill="#475569" font-size="12">• Enum as string (HasConversion)</text>
-    <text x="70" y="151" fill="#475569" font-size="12">• Seed Data (HasData):</text>
-    <text x="85" y="172" fill="#64748b" font-size="11">- 2 Customers, 1 Contract Draft</text>
-    <text x="85" y="191" fill="#64748b" font-size="11">- 1 PriceList, 2 PriceItems</text>
-    <text x="70" y="215" fill="#475569" font-size="12">• EF Core Migrations (InitialCreate)</text>
-
-    <!-- Box 2: Domain Entities -->
-    <rect x="330" y="50" width="360" height="190" rx="6" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
-    <rect x="330" y="50" width="360" height="32" rx="6" fill="#fde68a"/>
-    <text x="510" y="71" text-anchor="middle" fill="#92400e" font-size="14" font-weight="700">Domain Entities (Mô hình thực thể)</text>
+    <!-- Box 1: DbContext & Migrations -->
+    <rect x="45" y="50" width="265" height="275" rx="6" fill="#fdf2f8" stroke="#db2777" stroke-width="1.5"/>
+    <rect x="45" y="50" width="265" height="32" rx="6" fill="#fbcfe8"/>
+    <text x="177" y="71" text-anchor="middle" fill="#9d174d" font-size="14" font-weight="700">QtkdDbContext</text>
     
-    <rect x="345" y="92" width="155" height="55" rx="4" fill="#ffffff" stroke="#fcd34d" stroke-width="1"/>
-    <text x="422" y="112" text-anchor="middle" fill="#0f172a" font-size="12" font-weight="700">Customer</text>
-    <text x="422" y="132" text-anchor="middle" fill="#475569" font-size="10.5">Id, Name, Status</text>
+    <text x="60" y="103" fill="#334155" font-size="12" font-weight="600">• Fluent API Mapping:</text>
+    <text x="75" y="122" fill="#475569" font-size="11">- Enum dạng chuỗi (HasConversion)</text>
+    <text x="75" y="139" fill="#475569" font-size="11">- Quan hệ 1-N, Unique Index</text>
+    <text x="75" y="156" fill="#475569" font-size="11">- DeleteBehavior: Restrict / Cascade</text>
+    
+    <text x="60" y="183" fill="#334155" font-size="12" font-weight="600">• Seed Data (HasData):</text>
+    <text x="75" y="202" fill="#475569" font-size="11">- 2 Customers (Minh Phát, Hải Long)</text>
+    <text x="75" y="219" fill="#475569" font-size="11">- 1 Contract Draft (HD-2026-018)</text>
+    <text x="75" y="236" fill="#475569" font-size="11">- 1 PriceList, 2 PriceItems</text>
+    
+    <text x="60" y="263" fill="#334155" font-size="12" font-weight="600">• Migration đã sinh:</text>
+    <text x="75" y="282" fill="#9d174d" font-size="11.5" font-weight="600">InitialCreate</text>
+    <text x="75" y="299" fill="#64748b" font-size="10.5">(Gồm Schema 4 bảng &amp; Seed Data)</text>
 
-    <text x="510" y="123" text-anchor="middle" fill="#b45309" font-size="14" font-weight="700">1 ──── N</text>
+    <!-- Box 2: Domain Entities & Relationships (Chi tiết chuẩn) -->
+    <rect x="325" y="50" width="410" height="275" rx="6" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
+    <rect x="325" y="50" width="410" height="32" rx="6" fill="#fde68a"/>
+    <text x="530" y="71" text-anchor="middle" fill="#92400e" font-size="14" font-weight="700">Domain Entities (Mô hình thực thể)</text>
+    
+    <!-- Customer Entity -->
+    <rect x="340" y="94" width="160" height="70" rx="4" fill="#ffffff" stroke="#fcd34d" stroke-width="1"/>
+    <text x="420" y="113" text-anchor="middle" fill="#0f172a" font-size="12" font-weight="700">Customer</text>
+    <text x="350" y="131" fill="#475569" font-size="10.5">• Id (PK): int</text>
+    <text x="350" y="146" fill="#475569" font-size="10.5">• Name, Status</text>
 
-    <rect x="520" y="92" width="155" height="55" rx="4" fill="#ffffff" stroke="#fcd34d" stroke-width="1"/>
-    <text x="597" y="112" text-anchor="middle" fill="#0f172a" font-size="12" font-weight="700">Contract</text>
-    <text x="597" y="132" text-anchor="middle" fill="#475569" font-size="10">Id, ContractNo, Dates, Status</text>
+    <!-- Quan hệ Customer 1 - N Contract -->
+    <line x1="500" y1="129" x2="560" y2="129" stroke="#b45309" stroke-width="2"/>
+    <text x="508" y="123" fill="#b45309" font-size="11" font-weight="700">1</text>
+    <text x="548" y="123" fill="#b45309" font-size="11" font-weight="700">N</text>
+    <text x="530" y="145" text-anchor="middle" fill="#b45309" font-size="9" font-weight="600">FK: CustomerId</text>
 
-    <rect x="345" y="158" width="155" height="55" rx="4" fill="#ffffff" stroke="#fcd34d" stroke-width="1"/>
-    <text x="422" y="178" text-anchor="middle" fill="#0f172a" font-size="12" font-weight="700">PriceList</text>
-    <text x="422" y="198" text-anchor="middle" fill="#475569" font-size="10.5">Id, Name, EffectiveDate</text>
+    <!-- Contract Entity -->
+    <rect x="560" y="94" width="160" height="70" rx="4" fill="#ffffff" stroke="#fcd34d" stroke-width="1"/>
+    <text x="640" y="113" text-anchor="middle" fill="#0f172a" font-size="12" font-weight="700">Contract</text>
+    <text x="570" y="131" fill="#475569" font-size="10.5">• Id (PK): int</text>
+    <text x="570" y="146" fill="#475569" font-size="10.5">• ContractNo (Unique)</text>
+    <text x="570" y="159" fill="#475569" font-size="9.5">• StartDate, EndDate, Status</text>
 
-    <text x="510" y="189" text-anchor="middle" fill="#b45309" font-size="14" font-weight="700">1 ──── N</text>
+    <!-- PriceList Entity -->
+    <rect x="340" y="180" width="160" height="70" rx="4" fill="#ffffff" stroke="#fcd34d" stroke-width="1"/>
+    <text x="420" y="199" text-anchor="middle" fill="#0f172a" font-size="12" font-weight="700">PriceList</text>
+    <text x="350" y="217" fill="#475569" font-size="10.5">• Id (PK): int</text>
+    <text x="350" y="232" fill="#475569" font-size="10.5">• Name: string</text>
+    <text x="350" y="245" fill="#475569" font-size="10">• EffectiveDate: DateOnly</text>
 
-    <rect x="520" y="158" width="155" height="55" rx="4" fill="#ffffff" stroke="#fcd34d" stroke-width="1"/>
-    <text x="597" y="178" text-anchor="middle" fill="#0f172a" font-size="12" font-weight="700">PriceItem</text>
-    <text x="597" y="198" text-anchor="middle" fill="#475569" font-size="10.5">PriceListId, Code, UnitPrice</text>
+    <!-- Quan hệ PriceList 1 - N PriceItem -->
+    <line x1="500" y1="215" x2="560" y2="215" stroke="#b45309" stroke-width="2"/>
+    <text x="508" y="209" fill="#b45309" font-size="11" font-weight="700">1</text>
+    <text x="548" y="209" fill="#b45309" font-size="11" font-weight="700">N</text>
+    <text x="530" y="231" text-anchor="middle" fill="#b45309" font-size="9" font-weight="600">FK: PriceListId</text>
 
-    <text x="510" y="231" text-anchor="middle" fill="#64748b" font-size="10.5">Enums: CustomerStatus · ContractStatus</text>
+    <!-- PriceItem Entity -->
+    <rect x="560" y="180" width="160" height="70" rx="4" fill="#ffffff" stroke="#fcd34d" stroke-width="1"/>
+    <text x="640" y="199" text-anchor="middle" fill="#0f172a" font-size="12" font-weight="700">PriceItem</text>
+    <text x="570" y="216" fill="#b45309" font-size="10" font-weight="600">• PK: (PriceListId, Code)</text>
+    <text x="570" y="231" fill="#475569" font-size="10.5">• ServiceCode: string</text>
+    <text x="570" y="245" fill="#475569" font-size="10.5">• UnitPrice: decimal</text>
+
+    <!-- Enums badge -->
+    <rect x="340" y="265" width="380" height="45" rx="4" fill="#fef9c3" stroke="#facc15" stroke-width="1"/>
+    <text x="530" y="283" text-anchor="middle" fill="#854d0e" font-size="11" font-weight="700">Enums (Lưu dạng chuỗi - HasConversion):</text>
+    <text x="530" y="299" text-anchor="middle" fill="#713f12" font-size="10.5">CustomerStatus (Active, Inactive) · ContractStatus (Draft, PendingApproval,...)</text>
 
     <!-- Box 3: PostgreSQL Database -->
-    <rect x="710" y="50" width="260" height="190" rx="6" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
-    <rect x="710" y="50" width="260" height="32" rx="6" fill="#ddd6fe"/>
-    <text x="840" y="71" text-anchor="middle" fill="#5b21b6" font-size="14" font-weight="700">PostgreSQL Database</text>
+    <rect x="750" y="50" width="265" height="275" rx="6" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+    <rect x="750" y="50" width="265" height="32" rx="6" fill="#ddd6fe"/>
+    <text x="882" y="71" text-anchor="middle" fill="#5b21b6" font-size="14" font-weight="700">PostgreSQL Database</text>
     
-    <text x="730" y="105" fill="#475569" font-size="12" font-weight="600">• Database: qtkd_dev</text>
-    <text x="730" y="128" fill="#475569" font-size="12">• Cổng mặc định: 5432</text>
-    <text x="730" y="151" fill="#475569" font-size="12">• Provider: Npgsql.EFCore</text>
-    <text x="730" y="176" fill="#475569" font-size="12">• Các bảng lưu trữ:</text>
-    <text x="745" y="197" fill="#6b21a8" font-size="11">"Customers", "Contracts"</text>
-    <text x="745" y="215" fill="#6b21a8" font-size="11">"PriceLists", "PriceItems"</text>
+    <text x="765" y="103" fill="#334155" font-size="12" font-weight="600">• Database Name: qtkd_dev</text>
+    <text x="765" y="125" fill="#334155" font-size="12" font-weight="600">• Port: 5432 (Mặc định)</text>
+    <text x="765" y="147" fill="#334155" font-size="12" font-weight="600">• Provider: Npgsql EFCore</text>
+    
+    <text x="765" y="177" fill="#334155" font-size="12" font-weight="600">• Các bảng vật lý đã tạo:</text>
+    <rect x="765" y="188" width="235" height="120" rx="4" fill="#ffffff" stroke="#c4b5fd" stroke-width="1"/>
+    <text x="780" y="209" fill="#5b21b6" font-size="11" font-weight="600">1. Customers</text>
+    <text x="795" y="225" fill="#64748b" font-size="10">PK: Id | Name, Status</text>
+    <text x="780" y="242" fill="#5b21b6" font-size="11" font-weight="600">2. Contracts</text>
+    <text x="795" y="258" fill="#64748b" font-size="10">PK: Id | FK: CustomerId | Dates, Status</text>
+    <text x="780" y="275" fill="#5b21b6" font-size="11" font-weight="600">3. PriceLists &amp; 4. PriceItems</text>
+    <text x="795" y="291" fill="#64748b" font-size="10">PK: Id | PK kép: (PriceListId, ServiceCode)</text>
   </g>
 </svg>
