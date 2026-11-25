@@ -26,7 +26,10 @@ public class QtkdDbContextFactory : IDesignTimeDbContextFactory<QtkdDbContext>
             .Build();
 
         var connectionString = configuration.GetConnectionString("Default")
-            ?? "Host=localhost;Port=5432;Database=qtkd_dev;Username=postgres;Password=postgres";
+            ?? throw new InvalidOperationException(
+                "Connection string 'Default' not found. " +
+                "Configure it via User Secrets: " +
+                "dotnet user-secrets set \"ConnectionStrings:Default\" \"Host=...;Password=...\"");
 
         var builder = new DbContextOptionsBuilder<QtkdDbContext>();
         builder.UseNpgsql(connectionString);
