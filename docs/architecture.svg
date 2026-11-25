@@ -131,12 +131,13 @@
     <text x="535" y="147" text-anchor="middle" fill="#b45309" font-size="9" font-weight="600">FK: CustomerId</text>
 
     <!-- Contract Entity -->
-    <rect x="570" y="94" width="165" height="74" rx="4" fill="#ffffff" stroke="#fcd34d" stroke-width="1"/>
-    <text x="652" y="113" text-anchor="middle" fill="#0f172a" font-size="12" font-weight="700">Contract</text>
-    <text x="578" y="129" fill="#475569" font-size="10">• Id (PK): int</text>
-    <text x="578" y="142" fill="#b45309" font-size="10" font-weight="600">• CustomerId (FK): int</text>
-    <text x="578" y="155" fill="#475569" font-size="9.5">• ContractNo (Unique)</text>
-    <text x="578" y="166" fill="#475569" font-size="9">• Dates, Status: ContractStatus</text>
+    <rect x="568" y="90" width="170" height="82" rx="4" fill="#ffffff" stroke="#fcd34d" stroke-width="1"/>
+    <text x="653" y="106" text-anchor="middle" fill="#0f172a" font-size="12" font-weight="700">Contract</text>
+    <text x="575" y="120" fill="#475569" font-size="9.5">• Id (PK): int | CustomerId (FK)</text>
+    <text x="575" y="133" fill="#475569" font-size="9.5">• ContractNo (Unique)</text>
+    <text x="575" y="146" fill="#475569" font-size="9">• StartDate: DateOnly?</text>
+    <text x="575" y="157" fill="#475569" font-size="9">• EndDate: DateOnly?</text>
+    <text x="575" y="168" fill="#475569" font-size="9">• Status: ContractStatus</text>
 
     <!-- PriceList Entity -->
     <rect x="340" y="180" width="160" height="74" rx="4" fill="#ffffff" stroke="#fcd34d" stroke-width="1"/>

@@ -14,7 +14,7 @@ graph TD
 
     subgraph "Mô hình thực thể & Quan hệ (Domain Entities)"
         Customer["Customer<br/>• Id (PK): int<br/>• Name: string<br/>• Status: CustomerStatus"]
-        Contract["Contract<br/>• Id (PK): int<br/>• CustomerId (FK): int<br/>• ContractNo (Unique)<br/>• StartDate, EndDate (nullable)<br/>• Status: ContractStatus"]
+        Contract["Contract<br/>• Id (PK): int<br/>• CustomerId (FK): int<br/>• ContractNo (Unique)<br/>• StartDate: DateOnly?<br/>• EndDate: DateOnly?<br/>• Status: ContractStatus"]
         PriceList["PriceList<br/>• Id (PK): int<br/>• Name: string<br/>• EffectiveDate: DateOnly"]
         PriceItem["PriceItem<br/>• PK kép: (PriceListId, ServiceCode)<br/>• PriceListId (FK): int<br/>• ServiceCode: string<br/>• UnitPrice: decimal"]
 

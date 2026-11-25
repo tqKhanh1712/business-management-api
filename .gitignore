@@ -480,3 +480,8 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
+
+# Temporary notes and helper files
+*FullCode*.md
+link_repo.txt
+business-management-api/
